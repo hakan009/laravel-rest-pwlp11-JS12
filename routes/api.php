@@ -31,6 +31,8 @@ Route::get('/hello', function(){
 Route::post('/login',[ApiAuthController::class,'login']);
 
 Route::middleware('auth:sanctum')->group(function() {
-    Route::apiResource('/mahasiswas', MahasiswaController::class);
+    Route::apiResource('/mahasiswa', MahasiswaController::class); //jika tidak bisa di postman ganti jadi '/mahasiswas'
     Route::get('/logout',[ApiAuthController::class,'logout']);
 });
+
+Route::post('/register', [ApiAuthController::class, 'register']);
